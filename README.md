@@ -1,43 +1,65 @@
-# Astro Starter Kit: Minimal
+# Portfolio Personal
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+Este es mi portafolio personal, diseñado para ser rápido, accesible y fácil de mantener. Está construido utilizando **Astro** como framework principal y **Tailwind CSS** para los estilos.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Tecnologías
 
-## 🚀 Project Structure
+- **[Astro](https://astro.build/)**: Framework web enfocado en el contenido y el rendimiento.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Framework CSS de utilidad primero para un diseño rápido y responsivo.
+- **[Lucide Astro](https://lucide.dev/)**: Colección de iconos hermosos y consistentes.
 
-Inside of your Astro project, you'll see the following folders and files:
+## ✨ Características Principales
+
+- **🌐 Internacionalización (i18n)**: Soporte completo para Español (`/es`) e Inglés (`/en`), con detección y enrutamiento configurado.
+- **gama Modo Oscuro/Claro**: Tema dinámico que respeta la preferencia del sistema y permite el cambio manual por el usuario.
+- **📱 Diseño Responsivo**: Adaptado perfectamente a dispositivos móviles, tablets y escritorio.
+- **⚡ Alto Rendimiento**: Arquitectura de "Islas" de Astro para enviar el mínimo JavaScript necesario al cliente.
+
+## 🛠️ Instalación y Configuración
+
+Sigue estos pasos para ejecutar el proyecto localmente:
+
+1. **Clonar el repositorio**:
+   ```bash
+   git clone <tu-repositorio-url>
+   cd portfolio
+   ```
+
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el servidor de desarrollo**:
+   ```bash
+   npm run dev
+   ```
+   El sitio estará disponible en `http://localhost:4321`.
+
+## 📂 Estructura del Proyecto
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── layouts/        # Plantillas base (Layout principal)
+├── locales/        # Archivos de traducción (JSON)
+├── pages/          # Rutas y páginas del sitio
+│   ├── es/         # Página de inicio y rutas en Español
+│   ├── en/         # Página de inicio y rutas en Inglés
+│   └── index.astro # Lógica de redirección o landing
+├── styles/         # Estilos globales CSS
+└── utils/          # Funciones de utilidad (ej. lógica i18n)
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧞 Comandos Disponibles
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Todos los comandos se ejecutan desde la raíz del proyecto:
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Comando | Descripción |
+| :--- | :--- |
+| `npm run dev` | Inicia un servidor de desarrollo local con recarga en caliente. |
+| `npm run build` | Compila el sitio para producción en la carpeta `dist/`. |
+| `npm run preview` | Sirve la versión compilada localmente para probar antes de desplegar. |
 
-## 🧞 Commands
+## 📄 Licencia
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Este proyecto es de uso personal.

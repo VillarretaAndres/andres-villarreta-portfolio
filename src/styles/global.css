@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", sans-serif;
+
+  --bg: #e5e1d8;
+  --text: #1c1a17;
+  --primary: #c9a24d;
+  --shadow-light: rgba(255, 255, 255, 0.6);
+  --shadow-dark: rgba(0, 0, 0, 0.15);
+  --dark: #1c1a17;
+}
+
+[data-theme="dark"] {
+  --bg: #1c1a17;
+  --text: #e5e1d8;
+  --primary: #c9a24d;
+  --shadow-light: rgba(255, 255, 255, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+html:not([data-theme]) body {
+  transition: none;
+}
+.box {
+  position: absolute;
+  top: -25vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; /* MÁS GRANDE */
+  height: 50vw;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.15) 35%,
+    rgba(0, 0, 0, 0.05) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.neuro {
+  background: var(--bg);
+  border-radius: 12px;
+  box-shadow: -6px -6px 12px var(--shadow-light),
+    6px 6px 12px var(--shadow-dark);
+}
+.neuro.inset {
+  box-shadow: inset -6px -6px 12px var(--shadow-light),
+    inset 6px 6px 12px var(--shadow-dark);
+}
+
+.mode {
+  @apply px-4 py-2 cursor-pointer;
+  transition: all 0.3s ease;
+}
+.mode.active {
+  @apply rounded-xl;
+}
+
+.mode-background {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: var(--primary);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.mode-background.is-dark {
+  transform: translateX(100%);
+}
+
+.mode {
+  position: relative;
+  z-index: 1;
+  color: var(--text);
+}
+
+.mode.active {
+  color: var(--text);
+}
+
+.tech-pill {
+  @apply px-4 py-2 rounded-full text-sm font-medium bg-(--primary) text-(--bg) hover:scale-105 transition-transform duration-300 cursor-default;
+}
